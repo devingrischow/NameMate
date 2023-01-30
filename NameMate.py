@@ -15,7 +15,7 @@ class NameMate:
         self.userSearch = ''
 
     def run(self):
-        request = input("What would you like to Search for?\nA.App Name\nB.Company Name\nC.Both\nD.Add A New Add Search Query\nE.Add A new Companny Search Query\n")
+        request = input("What would you like to Search for?\nA.App Name\nB.Company Name\nC.Both\nD.Add A New Add Search Query\nE.Add A new Companny Search Query\n\n\n")
         request = request.lower()
 
         if request == 'a':
@@ -29,7 +29,7 @@ class NameMate:
         elif request == 'e':
             self.addCompanyQuery()
         else:
-            print("error, please try again")
+            print("error, please try again\n\n")
             self.run()
         
     #gathers all the possible search queries from the apps table and sends them to the google search function
@@ -65,16 +65,19 @@ class NameMate:
             newSearch = f"{taburl}{searchTerm} {search}"
             #newSearch = f"{taburl}{searchTerm}+{search}&start=0"
             c.open_new_tab(f'{newSearch}')
+        self.run()
 
     def addNewAppQuery(self):
         newAppQuery = input("Enter a new search query to: \nFollow this formula: ___ *Query*\n")
 
         dbm.newappQuery(newAppQuery)
+        self.run()
 
     def addCompanyQuery(self):
         newAppQuery = input("Enter a new search query to: \nFollow this formula: ___ *Query*\n")
 
         dbm.newcompanyQuery(newAppQuery)
+        self.run()
         
 
 
