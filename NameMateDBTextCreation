@@ -1,0 +1,19 @@
+CREATE TABLE AppSearches(
+id INT PRIMARY KEY,
+searchQuery TEXT
+)
+
+CREATE TABLE CompanySearches(
+id INT PRIMARY KEY,
+searchQuery TEXT
+)
+
+INSERT INTO AppSearches (searchQuery) VALUES ('');
+INSERT INTO AppSearches (searchQuery) VALUES ('App');
+
+INSERT INTO CompanySearches (searchQuery) VALUES ('LLC');
+INSERT INTO CompanySearches (searchQuery) VALUES ('company');
+
+
+
+
