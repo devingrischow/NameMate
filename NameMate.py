@@ -6,6 +6,8 @@ This program uses databases to easily rapidly research different names and compa
 import DataBaseManager
 import webbrowser
 dbm = DataBaseManager.DATABASE_MANAGER()
+
+
 class NameMate:
     
 
