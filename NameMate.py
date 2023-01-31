@@ -15,7 +15,7 @@ class NameMate:
         self.userSearch = ''
 
     def run(self):
-        request = input("What would you like to Search for?\nA.App Name\nB.Company Name\nC.Both\nD.Add A New Add Search Query\nE.Add A new Companny Search Query\n\n\n")
+        request = input("What would you like to Search for?\nA.App Name\nB.Company Name\nC.Both\nD.Add A New Add Search Query\nE.Add A new Companny Search Query\n\n\nAction: ")
         request = request.lower()
 
         if request == 'a':
@@ -51,11 +51,14 @@ class NameMate:
         self.companySearch()    
 
     def openSearches(self, searchList):
+        
         taburl = "https://www.google.com/search?q="
         searchTerm = input("Enter A Name To Search For:     ")
-        searchTerm = searchTerm.replace(' ', '+')
-        #remove first search and open a new browser
+        #takes the input from the user, and turns it into a searchable google string
+        #it replaces all the spaces with pluses to form a searchable google URL
         
+        searchTerm = searchTerm.replace(' ', '+')
+        #opens a new browser session and does a search for the users query
         c = webbrowser.get('safari')
         c.open_new(f'{taburl}{searchTerm}')
 
